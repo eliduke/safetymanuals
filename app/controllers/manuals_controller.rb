@@ -50,7 +50,7 @@ class ManualsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_manual
-    @manual = Manual.find(params[:id])
+    @manual = Manual.find_by(permalink: params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.

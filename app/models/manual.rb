@@ -1,13 +1,13 @@
 class Manual < ApplicationRecord
-  has_attached_file :photo, path: '/:class/:manual_file_name'
+  has_permalink :slug
+  has_attached_file :photo, path: '/:class/:permalink'
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
-  Paperclip.interpolates :manual_file_name do |attachment, style|
-    attachment.instance.manual_file_name + File.extname(attachment.original_filename)
+  Paperclip.interpolates :permalink do |attachment, style|
+    attachment.instance.permalink + File.extname(attachment.original_filename)
   end
 
-  def manual_file_name
-    "#{carrier.downcase}-#{make.downcase}-#{model.downcase}"
+  def slug
+    "#{carrier}-#{make}-#{model}"
   end
-
 end

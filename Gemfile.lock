@@ -61,6 +61,7 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    has_permalink (0.1.7)
     i18n (0.8.4)
     jmespath (1.3.1)
     listen (3.1.5)
@@ -172,6 +173,7 @@ DEPENDENCIES
   aws-sdk (~> 2.3)
   bcrypt (~> 3.1.7)
   byebug
+  has_permalink
   listen (>= 3.0.5, < 3.2)
   paperclip
   pg
