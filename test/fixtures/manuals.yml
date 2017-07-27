@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: MyString
+  vessel_make: MyString
+  vessel_model: MyString
+
+two:
+  company: MyString
+  vessel_make: MyString
+  vessel_model: MyString

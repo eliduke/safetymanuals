@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @manual.company %>
+</p>
+
+<p>
+  <strong>Vessel make:</strong>
+  <%= @manual.vessel_make %>
+</p>
+
+<p>
+  <strong>Vessel model:</strong>
+  <%= @manual.vessel_model %>
+</p>
+
+<%= link_to 'Edit', edit_manual_path(@manual) %> |
+<%= link_to 'Back', manuals_path %>
