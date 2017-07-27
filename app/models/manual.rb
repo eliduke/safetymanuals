@@ -7,7 +7,7 @@ class Manual < ApplicationRecord
   end
 
   def manual_file_name
-    "#{company.downcase}-#{vessel_make.downcase}-#{vessel_model.downcase}"
+    "#{company.downcase}-#{make.downcase}-#{model.downcase}"
   end
 
 end
