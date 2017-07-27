@@ -48,13 +48,13 @@ class ManualsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_manual
-      @manual = Manual.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_manual
+    @manual = Manual.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def manual_params
-      params.require(:manual).permit(:company, :make, :model, :photo)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def manual_params
+    params.require(:manual).permit(:carrier, :make, :model, :photo)
+  end
 end
