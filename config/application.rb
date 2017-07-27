@@ -19,8 +19,7 @@ module Safetymanuals
         secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
         s3_region: ENV.fetch('AWS_REGION'),
       },
-      url: ':s3_domain_url',
-      path: '/:class/:filename'
+      url: ':s3_domain_url'
     }
 
     # Settings in config/environments/* take precedence over those specified here.

@@ -41,6 +41,8 @@ class ManualsController < ApplicationController
 
   # DELETE /manuals/1
   def destroy
+    @manual.photo = nil
+    @manual.save
     @manual.destroy
     redirect_to manuals_url, notice: 'Manual was successfully destroyed.'
   end
