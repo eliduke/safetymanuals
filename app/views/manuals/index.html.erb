@@ -19,7 +19,7 @@
         <td><%= manual.carrier %></td>
         <td><%= manual.make %></td>
         <td><%= manual.model %></td>
-        <td><img src="<%= manual.photo.url %>"></td>
+        <td><%= image_tag(manual.photo.url) %></td>
         <td><%= link_to 'Show', manual %></td>
         <td><%= link_to 'Edit', edit_manual_path(manual) %></td>
         <td><%= link_to 'Destroy', manual, method: :delete, data: { confirm: 'Are you sure?' } %></td>
