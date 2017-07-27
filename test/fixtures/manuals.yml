@@ -2,10 +2,10 @@
 
 one:
   company: MyString
-  vessel_make: MyString
-  vessel_model: MyString
+  make: MyString
+  model: MyString
 
 two:
   company: MyString
-  vessel_make: MyString
-  vessel_model: MyString
+  make: MyString
+  model: MyString
