@@ -26,6 +26,11 @@
     <%= form.text_field :vessel_model, id: :manual_vessel_model %>
   </div>
 
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.file_field :photo, id: :manual_photo %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -53,6 +53,6 @@ class ManualsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def manual_params
-      params.require(:manual).permit(:company, :vessel_make, :vessel_model)
+      params.require(:manual).permit(:company, :vessel_make, :vessel_model, :photo)
     end
 end

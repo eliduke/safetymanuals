@@ -8,6 +8,7 @@
       <th>Company</th>
       <th>Vessel make</th>
       <th>Vessel model</th>
+      <th>Photo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= manual.company %></td>
         <td><%= manual.vessel_make %></td>
         <td><%= manual.vessel_model %></td>
+        <td><img src="<%= manual.photo.url %>"></td>
         <td><%= link_to 'Show', manual %></td>
         <td><%= link_to 'Edit', edit_manual_path(manual) %></td>
         <td><%= link_to 'Destroy', manual, method: :delete, data: { confirm: 'Are you sure?' } %></td>
