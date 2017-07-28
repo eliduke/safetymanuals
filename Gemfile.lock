@@ -56,6 +56,10 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
+    dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
     erubi (1.6.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -173,6 +177,7 @@ DEPENDENCIES
   aws-sdk (~> 2.3)
   bcrypt (~> 3.1.7)
   byebug
+  dotenv-rails
   has_permalink
   listen (>= 3.0.5, < 3.2)
   paperclip
