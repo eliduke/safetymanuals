@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Safetymanuals</title>
+    <title><%= "#{@manual.title} - " if @manual %>Safety Manuals</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <h1><%= link_to "SAFETY MANUALS", root_path %></h1>
+
     <%= yield %>
+
+    <div id="footer">
+      <p>Created by: <%= link_to "Eli Duke", "https://eliduke.com", target: "_blank" %> | <%= link_to "Admin", admin_manuals_path %></p>
+    </div>
   </body>
 </html>

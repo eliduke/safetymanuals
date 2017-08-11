@@ -1,21 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Carrier:</strong>
-  <%= @manual.carrier %>
-</p>
-
-<p>
-  <strong>Make:</strong>
-  <%= @manual.make %>
-</p>
-
-<p>
-  <strong>Model:</strong>
-  <%= @manual.model %>
-</p>
-
-<%= image_tag(@manual.photo.url) %>
-
-<%= link_to 'Edit', edit_manual_path(@manual) %> |
-<%= link_to 'Back', manuals_path %>
+<div class="container">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h2><%= @manual.title %></h2>
+    <%= image_tag(@manual.photo.url(:medium), class: "img-responsive") %>
+  </div>
+</div>

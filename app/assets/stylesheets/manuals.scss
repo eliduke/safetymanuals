@@ -1,3 +1,89 @@
 // Place all the styles related to the Manuals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: #e5abb6;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  font-weight: bolder;
+
+  a {
+    color: #fff;
+  }
+
+  a:hover {
+    color: #eee;
+    text-decoration: none;
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin: 10px 0 0 0;
+}
+
+a {
+  color: #666;
+}
+
+a:hover {
+  color: #cc98a2;
+  text-decoration: none;
+}
+
+form {
+  font-size: 150%;
+}
+
+#footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 20px 0 0 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  background: #eee;
+  padding: 0 15px 15px 15px;
+  width: 250px;
+  margin-bottom: 20px;
+  border: 3px solid #FFBFCB;
+}
+
+#notice {
+  font-size: 200%;
+  padding: 10px;
+  background-color: #eee;
+  border: 3px solid #ddd;
+  color: green;
+  text-align: center;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: #e5abb6;
+}

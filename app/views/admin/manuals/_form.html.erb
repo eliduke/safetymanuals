@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="col-sm-6 col-sm-offset-3">
+    <%= form_for [:admin, manual] do |form| %>
+      <div class="form-group">
+        <%= form.label :carrier %>
+        <%= form.text_field :carrier, id: :manual_carrier, class: "form-control input-lg" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :make %>
+        <%= form.text_field :make, id: :manual_make, class: "form-control input-lg" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :model %>
+        <%= form.text_field :model, id: :manual_model, class: "form-control input-lg" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :photo %>
+
+        <% if @manual.photo.present? %>
+          <%= image_tag(@manual.photo.url(:medium), class: "img-responsive") %>
+        <% end %>
+
+        <%= form.file_field :photo, id: :manual_photo, class: "form-control input-lg" %>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-default">SAVE</button>
+      </div>
+    <% end %>
+  </div>
+</div>
