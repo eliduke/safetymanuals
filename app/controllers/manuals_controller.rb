@@ -6,7 +6,7 @@ class ManualsController < ApplicationController
     @manuals = @manuals.by_make(params[:make]) if params[:make].present?
     @manuals = @manuals.by_model(params[:model]) if params[:model].present?
 
-    @carriers = Manual.all.pluck(:carrier).uniq
+    @carriers = Manual.all.pluck(:carrier).uniq.sort
   end
 
   def list
