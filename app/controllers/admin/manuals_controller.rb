@@ -17,7 +17,7 @@ class Admin::ManualsController < ApplicationController
     @manual = Manual.new(manual_params)
 
     if @manual.save
-      redirect_to @manual, notice: 'Manual was successfully created.'
+      redirect_to admin_manuals_path, notice: 'Manual was successfully created.'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class Admin::ManualsController < ApplicationController
     @manual.photo = nil
     @manual.save
     @manual.destroy
-    redirect_to admin_manuals_url, notice: 'Manual was successfully destroyed.'
+    redirect_to admin_manuals_path, notice: 'Manual was successfully destroyed.'
   end
 
   private

@@ -3,8 +3,8 @@
     <% @manuals.each do |manual| %>
       <div class="flex-item">
         <%= link_to manual do %>
-          <h3><%= manual.carrier %></h3>
-          <p><%= manual.make %> <%= manual.model %></p>
+          <h2 class="carrier"><%= manual.carrier %></h2>
+          <p class="make_and_model"><%= manual.make %> <%= manual.model %></p>
           <%= image_tag(manual.photo.url(:small), class: "img-responsive") %>
         <% end %>
       </div>
