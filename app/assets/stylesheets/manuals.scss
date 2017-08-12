@@ -52,6 +52,17 @@ a:hover {
   text-decoration: none;
 }
 
+ul {
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #f7e5e9;
+}
+
+li {
+  display: inline-block;
+}
+
 form {
   font-size: 150%;
 }

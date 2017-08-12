@@ -16,6 +16,10 @@ class Manual < ApplicationRecord
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
   validates :carrier, :make, :model, presence: true
 
+  scope :by_carrier, lambda { |carrier| where("carrier = ?", carrier) }
+  scope :by_make, lambda { |make| where("make = ?", make) }
+  scope :by_model, lambda { |model| where("model =  ?", model) }
+
   def title
     "#{carrier} #{make} #{model}"
   end

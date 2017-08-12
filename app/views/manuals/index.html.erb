@@ -1,3 +1,9 @@
+<ul class="list-inline">
+  <% @carriers.each do |carrier| %>
+    <li><%= link_to carrier, "?carrier=#{carrier}" %></li>
+  <% end %>
+</ul>
+
 <div class="container">
   <div class="flex-container">
     <% @manuals.each do |manual| %>

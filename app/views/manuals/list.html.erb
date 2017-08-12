@@ -1,0 +1,23 @@
+<h2>Master List</h2>
+
+<div class="container">
+  <div class="col-sm-6 col-sm-offset-3">
+    <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Carrier</th>
+          <th>Make &amp; Model</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @manuals.each do |manual| %>
+          <tr>
+            <td><%= manual.carrier %></td>
+            <td><%= manual.make %> <%= manual.model %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
