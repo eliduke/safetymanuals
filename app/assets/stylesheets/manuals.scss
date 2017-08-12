@@ -56,12 +56,15 @@ ul {
   margin: 0;
   padding: 20px 0;
   text-align: center;
-  background-color: #f7e5e9;
+
+  li {
+    display: inline-block;
+    color: #999;
+  }
 }
 
-li {
-  display: inline-block;
-}
+ul.carriers { background-color: #efccd3 }
+ul.makes { background-color: #f9eef0 }
 
 form {
   font-size: 150%;
