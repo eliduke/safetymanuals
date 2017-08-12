@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container show">
   <div class="col-sm-6 col-sm-offset-3">
-    <h2><%= @manual.title %></h2>
+    <h3><%= @manual.carrier %></h3>
+    <p><%= @manual.make %> <%= @manual.model %></p>
     <%= image_tag(@manual.photo.url(:medium), class: "img-responsive") %>
   </div>
 </div>
