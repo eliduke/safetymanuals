@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$color-dark: #ff748c;
+$color-medium: #ff9dae;
+$color-light: #ffc7d1;
+
 body {
   margin: 0;
   padding: 0;
@@ -9,7 +13,7 @@ body {
 }
 
 #header {
-  background-color: #e5abb6;
+  background-color: $color-dark;
   text-align: center;
   padding: 20px;
   margin: 0;
@@ -31,7 +35,32 @@ body {
   }
 
   a:hover {
-    color: #eee;
+    color: #ccc;
+    text-decoration: none;
+  }
+}
+
+#filters {
+  ul {
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      color: #333;
+    }
+  }
+
+  ul.carriers { background-color: $color-medium }
+  ul.makes { background-color: $color-light }
+
+  p { margin: 20px 0 }
+
+  a { color: #eee }
+
+  a:hover {
+    color: #666;
     text-decoration: none;
   }
 }
@@ -46,6 +75,10 @@ h2.carrier {
   margin: 10px 0 0 0;
 }
 
+h3 {
+  text-align: center;
+}
+
 p {
   text-align: center;
 }
@@ -54,32 +87,14 @@ p.make_and_model {
   font-size: 150%;
 }
 
-p.filter {
-  margin: 20px 0;
-}
-
 a {
-  color: #666;
+  color: $color-dark;
 }
 
 a:hover {
-  color: #cc98a2;
+  color: $color-medium;
   text-decoration: none;
 }
-
-ul {
-  margin: 0;
-  padding: 20px 0;
-  text-align: center;
-
-  li {
-    display: inline-block;
-    color: #999;
-  }
-}
-
-ul.carriers { background-color: #efccd3 }
-ul.makes { background-color: #f9eef0 }
 
 form {
   font-size: 150%;
@@ -114,7 +129,7 @@ form {
   padding: 0 15px 15px 15px;
   width: 300px;
   margin-bottom: 20px;
-  border: 3px solid #FFBFCB;
+  border: 3px solid $color-medium;
 }
 
 #notice {

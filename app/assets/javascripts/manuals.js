@@ -3,7 +3,7 @@
 
 $(function() {
 
-  $('a.filter-toggle').click(function(e){
+  $('a.js-toggle-filter').click(function(e){
     e.preventDefault();
     $('#filters').toggle();
   });

@@ -8,14 +8,14 @@
     <title><%= "#{@manual.title} - " if @manual %>Safety Manuals</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
     <div id="header">
       <h1><%= link_to "SAFETY MANUALS", root_path %></h1>
-      <p><%= link_to "FILTERS", "", class: "filter-toggle" %> • <%= link_to "MASTER LIST", list_manuals_path %></p>
+      <p><%= link_to "FILTERS", "#", class: "js-toggle-filter" %> • <%= link_to "MASTER LIST", list_manuals_path %></p>
     </div>
 
     <%= yield %>
