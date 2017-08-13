@@ -1,4 +1,4 @@
-<div id="filters">
+<div id="filters" style="<%= 'display:none' unless params[:carrier].present? | params[:make].present? %>">
   <ul class="list-inline carriers">
     <li>CARRIERS:</li>
     <% @carriers.each do |carrier| %>
@@ -12,6 +12,17 @@
       <li><%= link_to make, "?make=#{make}" %></li>
     <% end %>
   </ul>
+
+  <% if params[:carrier].present? | params[:make].present? %>
+    <p class="filter">
+      Filtering
+      <% if params[:carrier].present? %>
+        Carrier: <em><%= params[:carrier] %></em>
+      <% else %>
+        Aircraft: <em><%= params[:make] %></em>
+      <% end %>
+    </p>
+  <% end %>
 </div>
 
 <div class="container">

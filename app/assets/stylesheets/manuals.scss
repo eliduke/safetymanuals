@@ -8,12 +8,23 @@ body {
   font-size: 150%;
 }
 
-h1 {
+#header {
   background-color: #e5abb6;
   text-align: center;
   padding: 20px;
   margin: 0;
-  font-weight: bolder;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
 
   a {
     color: #fff;
@@ -41,6 +52,10 @@ p {
 
 p.make_and_model {
   font-size: 150%;
+}
+
+p.filter {
+  margin: 20px 0;
 }
 
 a {

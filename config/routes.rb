@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :manuals, only: [:index, :show] do
     collection do
-      get :list
+      get :list, as: :list
     end
   end
 

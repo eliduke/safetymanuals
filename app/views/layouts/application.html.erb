@@ -13,7 +13,10 @@
   </head>
 
   <body>
-    <h1><%= link_to "SAFETY MANUALS", root_path %></h1>
+    <div id="header">
+      <h1><%= link_to "SAFETY MANUALS", root_path %></h1>
+      <p><%= link_to "FILTERS", "", class: "filter-toggle" %> • <%= link_to "MASTER LIST", list_manuals_path %></p>
+    </div>
 
     <%= yield %>
 
