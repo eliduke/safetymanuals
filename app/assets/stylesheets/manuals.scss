@@ -28,6 +28,7 @@ body {
     margin: 0;
     padding: 0;
     color: #fff;
+    font-size: 120%;
   }
 
   a {
@@ -77,6 +78,7 @@ h2.carrier {
 
 h3 {
   text-align: center;
+  font-weight: bold;
 }
 
 p {
@@ -96,8 +98,20 @@ a:hover {
   text-decoration: none;
 }
 
+table {
+  margin-top: 20px;
+}
+
 form {
-  font-size: 150%;
+  font-size: 120%;
+
+  input[type='file'] {
+    margin-top: 20px;
+  }
+}
+
+button {
+  width: 100%;
 }
 
 #footer {
