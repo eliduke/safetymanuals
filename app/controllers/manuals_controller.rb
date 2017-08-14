@@ -1,27 +1,27 @@
 class ManualsController < ApplicationController
+  before_action :set_filters, only: [:index, :list]
 
   def index
-    @manuals = Manual.all.order(:carrier)
-    @manuals = @manuals.by_carrier(params[:carrier]) if params[:carrier].present?
-    @manuals = @manuals.by_make(params[:make]) if params[:make].present?
-    @manuals = @manuals.by_model(params[:model]) if params[:model].present?
-
-    @carriers = Manual.all.pluck(:carrier).uniq.sort
-    @makes = Manual.all.pluck(:make).uniq.sort
   end
 
   def list
-    @manuals = Manual.all.order(:carrier)
-    @manuals = @manuals.by_carrier(params[:carrier]) if params[:carrier].present?
-    @manuals = @manuals.by_make(params[:make]) if params[:make].present?
-    @manuals = @manuals.by_model(params[:model]) if params[:model].present?
-
-    @carriers = Manual.all.pluck(:carrier).uniq.sort
-    @makes = Manual.all.pluck(:make).uniq.sort
   end
 
   def show
     @manual = Manual.find_by(permalink: params[:id])
+  end
+
+  private
+
+  def set_filters
+    @manuals = Manual.all.order(:carrier)
+    @manuals = @manuals.by_mode(params[:mode]) if params[:mode].present?
+    @manuals = @manuals.by_make(params[:make]) if params[:make].present?
+    @manuals = @manuals.by_carrier(params[:carrier]) if params[:carrier].present?
+
+    @modes = Manual::MODES
+    @makes = Manual.all.pluck(:make).uniq.sort
+    @carriers = Manual.all.pluck(:carrier).uniq.sort
   end
 
 end

@@ -3,8 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $color-dark: #ff748c;
-$color-medium: #ff9dae;
-$color-light: #ffc7d1;
+$color-medium: #ff8fa3;
+$color-light: #ffabba;
+$color-lightest: #ffc7d1;
 
 body {
   margin: 0;
@@ -53,12 +54,13 @@ body {
     }
   }
 
-  ul.carriers { background-color: $color-medium }
+  ul.modes { background-color: $color-medium }
   ul.makes { background-color: $color-light }
+  ul.carriers { background-color: $color-lightest }
 
   p { margin: 20px 0 }
 
-  a { color: #eee }
+  a { color: #fff }
 
   a:hover {
     color: #666;

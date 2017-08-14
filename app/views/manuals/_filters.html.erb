@@ -1,25 +1,34 @@
-<div id="filters" style="<%= 'display:none' unless params[:carrier].present? | params[:make].present? %>">
-  <ul class="list-inline carriers">
-    <li>CARRIERS:</li>
-    <% @carriers.each do |carrier| %>
-      <li><%= link_to carrier, "?carrier=#{carrier}" %></li>
+<div id="filters" style="<%= 'display:none' unless params[:carrier].present? | params[:make].present? | params[:mode].present? %>">
+  <ul class="list-inline modes">
+    <li>MODE:</li>
+    <% @modes.each do |mode| %>
+      <li><%= link_to mode, "?mode=#{mode}" %></li>
     <% end %>
   </ul>
 
   <ul class="list-inline makes">
-    <li>AIRCRAFT:</li>
+    <li>MAKE:</li>
     <% @makes.each do |make| %>
       <li><%= link_to make, "?make=#{make}" %></li>
     <% end %>
   </ul>
 
-  <% if params[:carrier].present? | params[:make].present? %>
+  <ul class="list-inline carriers">
+    <li>CARRIER:</li>
+    <% @carriers.each do |carrier| %>
+      <li><%= link_to carrier, "?carrier=#{carrier}" %></li>
+    <% end %>
+  </ul>
+
+  <% if params[:carrier].present? | params[:make].present? | params[:mode].present? %>
     <p>
       Filtering
       <% if params[:carrier].present? %>
         Carrier: <em><%= params[:carrier] %></em>
+      <% elsif params[:make].present? %>
+        Make: <em><%= params[:make] %></em>
       <% else %>
-        Aircraft: <em><%= params[:make] %></em>
+        Mode: <em><%= params[:mode] %></em>
       <% end %>
     </p>
   <% end %>

@@ -1,4 +1,6 @@
 class Manual < ApplicationRecord
+  MODES = ["Plane", "Train", "Helicopter"]
+
   has_permalink :slug
 
   has_attached_file :photo,
@@ -14,11 +16,12 @@ class Manual < ApplicationRecord
   end
 
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
-  validates :carrier, :make, :model, presence: true
 
-  scope :by_carrier, lambda { |carrier| where("carrier = ?", carrier) }
+  validates :mode, :carrier, :make, :model, presence: true
+
+  scope :by_mode, lambda { |mode| where("mode =  ?", mode) }
   scope :by_make, lambda { |make| where("make = ?", make) }
-  scope :by_model, lambda { |model| where("model =  ?", model) }
+  scope :by_carrier, lambda { |carrier| where("carrier = ?", carrier) }
 
   def title
     "#{carrier} #{make} #{model}"
