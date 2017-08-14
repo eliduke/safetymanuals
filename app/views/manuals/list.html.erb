@@ -9,6 +9,7 @@
         <tr>
           <th>Carrier</th>
           <th>Make &amp; Model</th>
+          <th style="width: 50px"></th>
         </tr>
       </thead>
 
@@ -17,6 +18,7 @@
           <tr>
             <td><%= manual.carrier %></td>
             <td><%= manual.make %> <%= manual.model %></td>
+            <td><%= link_to "show", manual %></td>
           </tr>
         <% end %>
       </tbody>
