@@ -28,7 +28,7 @@ class Manual < ApplicationRecord
   end
 
   def slug
-    "#{carrier}-#{make}-#{model}"
+    "#{carrier}-#{make}-#{model}-#{revision}"
   end
 
   def folder

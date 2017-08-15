@@ -23,6 +23,11 @@
       </div>
 
       <div class="form-group">
+        <%= form.label :revision %>
+        <%= form.text_field :revision, id: :manual_revision, class: "form-control input-lg" %>
+      </div>
+
+      <div class="form-group">
         <%= form.label :photo %>
 
         <% if @manual.photo.present? %>
