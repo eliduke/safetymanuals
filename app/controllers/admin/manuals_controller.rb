@@ -4,6 +4,13 @@ class Admin::ManualsController < ApplicationController
 
   def index
     @manuals = Manual.all.order(:carrier)
+    @manuals = @manuals.by_mode(params[:mode]) if params[:mode].present?
+    @manuals = @manuals.by_make(params[:make]) if params[:make].present?
+    @manuals = @manuals.by_carrier(params[:carrier]) if params[:carrier].present?
+
+    @modes = Manual::MODES
+    @makes = Manual.all.pluck(:make).uniq.sort
+    @carriers = Manual.all.pluck(:carrier).uniq.sort
   end
 
   def new
@@ -45,6 +52,6 @@ class Admin::ManualsController < ApplicationController
   end
 
   def manual_params
-    params.require(:manual).permit(:mode, :carrier, :make, :model, :photo)
+    params.require(:manual).permit(:mode, :carrier, :make, :model, :revision, :photo)
   end
 end
