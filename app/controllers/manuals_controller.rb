@@ -24,9 +24,22 @@ class ManualsController < ApplicationController
 
   def set_filters
     @manuals = Manual.all.order(:carrier)
-    @manuals = @manuals.by_mode(params[:mode]) if params[:mode].present?
-    @manuals = @manuals.by_make(params[:make]) if params[:make].present?
-    @manuals = @manuals.by_carrier(params[:carrier]) if params[:carrier].present?
+    @cleaned_params = {}
+
+    if params[:mode].present?
+      @manuals = @manuals.by_mode(params[:mode])
+      @cleaned_params.merge!({ mode: params[:mode] })
+    end
+
+    if params[:make].present?
+      @manuals = @manuals.by_make(params[:make])
+      @cleaned_params.merge!({ make: params[:make] })
+    end
+
+    if params[:carrier].present?
+      @manuals = @manuals.by_carrier(params[:carrier])
+      @cleaned_params.merge!({ carrier: params[:carrier] })
+    end
 
     @modes = Manual::MODES
     @makes = Manual.all.pluck(:make).uniq.sort

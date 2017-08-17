@@ -33,11 +33,11 @@
       <% end %>
 
       <div class="thumbnail-and-list">
-        <%= link_to manuals_path do %>
+        <%= link_to manuals_path(@cleaned_params) do %>
           <i class="fa fa-file-image-o <%= "selected" if @index_selected %>" aria-hidden="true"></i>
         <% end %>
 
-        <%= link_to list_manuals_path do %>
+        <%= link_to list_manuals_path(@cleaned_params) do %>
           <i class="fa fa-list-ul <%= "selected" if @list_selected %>" aria-hidden="true"></i>
         <% end %>
       </div>
