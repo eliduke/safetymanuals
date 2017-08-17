@@ -120,7 +120,12 @@ button {
   img { margin: 20px 0 }
   a { text-decoration: underline }
   a:hover { text-decoration: none }
-  p { text-align: left }
+
+  p {
+    text-align: left;
+    font-size: 120%;
+  }
+
   p.emoji {
     font-size: 300%;
     text-align: center;
