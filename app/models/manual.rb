@@ -1,6 +1,8 @@
 class Manual < ApplicationRecord
   MODES = ["Plane", "Train", "Helicopter"]
 
+  strip_attributes :only => [:carrier, :make, :model, :revision]
+
   has_permalink :slug
 
   has_attached_file :photo,

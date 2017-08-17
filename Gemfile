@@ -20,6 +20,7 @@ gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem "has_permalink"
 gem "font-awesome-rails"
+gem "strip_attributes"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
