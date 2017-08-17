@@ -2,12 +2,12 @@ class ManualsController < ApplicationController
   before_action :set_filters, only: [:index, :list]
 
   def index
-    @title = "Home"
+    @title = filter_present? ? active_filter : "Home"
     @index_selected = true
   end
 
   def list
-    @title = "Master List"
+    @title = filter_present? ? "#{active_filter} : Master List" : "Master List"
     @list_selected = true
   end
 
@@ -21,6 +21,14 @@ class ManualsController < ApplicationController
   end
 
   private
+
+  def filter_present?
+    params[:mode].present? || params[:make].present? || params[:carrier].present?
+  end
+
+  def active_filter
+    params[:mode]&.pluralize || params[:make] || params[:carrier]
+  end
 
   def set_filters
     @manuals = Manual.all.order(:carrier)
