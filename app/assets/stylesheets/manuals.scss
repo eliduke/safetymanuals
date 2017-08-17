@@ -117,10 +117,15 @@ button {
 }
 
 .about {
-  p { text-align: left }
   img { margin: 20px 0 }
   a { text-decoration: underline }
   a:hover { text-decoration: none }
+  p { text-align: left }
+  p.emoji {
+    font-size: 300%;
+    text-align: center;
+    margin-top: 50px;
+  }
 }
 
 #footer {
