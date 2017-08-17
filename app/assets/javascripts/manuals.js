@@ -3,9 +3,10 @@
 
 $(function() {
 
-  $('a.js-toggle-filter').click(function(e){
+  $('a.toggle-filter').click(function(e){
     e.preventDefault();
     $('#filters').toggle();
+    $('.fa-sitemap').toggleClass('selected');
   });
 
 });

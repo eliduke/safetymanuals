@@ -1,4 +1,6 @@
-<div id="filters" style="<%= 'display:none' unless params[:carrier].present? | params[:make].present? | params[:mode].present? %>">
+<% filter_on = params[:carrier].present? | params[:make].present? | params[:mode].present? %>
+
+<div id="filters" style="<%= 'display:none' unless filter_on %>">
   <ul class="list-inline modes">
     <li>MODE:</li>
     <% @modes.each do |mode| %>
@@ -19,17 +21,39 @@
       <li><%= link_to carrier, "?carrier=#{carrier}" %></li>
     <% end %>
   </ul>
+</div>
 
-  <% if params[:carrier].present? | params[:make].present? | params[:mode].present? %>
-    <p>
-      Filtering
-      <% if params[:carrier].present? %>
-        Carrier: <em><%= params[:carrier] %></em>
-      <% elsif params[:make].present? %>
-        Make: <em><%= params[:make] %></em>
-      <% else %>
-        Mode: <em><%= params[:mode] %></em>
+<div id="sub-header">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <% if @carriers.present? %>
+        <%= link_to "#", class: "toggle-filter" do %>
+          <i class="fa fa-sitemap <%= "selected" if filter_on %>" aria-hidden="true"></i>
+        <% end %>
       <% end %>
-    </p>
-  <% end %>
+
+      <div class="thumbnail-and-list">
+        <%= link_to manuals_path do %>
+          <i class="fa fa-file-image-o <%= "selected" if @index_selected %>" aria-hidden="true"></i>
+        <% end %>
+
+        <%= link_to list_manuals_path do %>
+          <i class="fa fa-list-ul <%= "selected" if @list_selected %>" aria-hidden="true"></i>
+        <% end %>
+      </div>
+
+      <% if params[:carrier].present? | params[:make].present? | params[:mode].present? %>
+        <p>
+          Filtering
+          <% if params[:carrier].present? %>
+            Carrier: <em><%= params[:carrier] %></em>
+          <% elsif params[:make].present? %>
+            Make: <em><%= params[:make] %></em>
+          <% else %>
+            Mode: <em><%= params[:mode] %></em>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -10,7 +10,6 @@ $color-lightest: #ffc7d1;
 body {
   margin: 0;
   padding: 0;
-  font-size: 150%;
 }
 
 #header {
@@ -68,6 +67,37 @@ body {
   }
 }
 
+#sub-header {
+  text-align: right;
+  background-color: #eee;
+  padding: 15px 0;
+
+  p {
+    margin: 0;
+  }
+
+  .toggle-filter {
+    float: left;
+  }
+
+  .thumbnail-and-list {
+    float: right;
+  }
+}
+
+i.fa {
+  font-size: 1.75em;
+  margin-right: 10px;
+}
+
+i.fa:last-of-type {
+  margin-right: 0
+}
+
+.selected {
+  color: $color-dark;
+}
+
 h2 {
   font-weight: bold;
   text-align: center;
@@ -83,6 +113,11 @@ h3 {
   font-weight: bold;
 }
 
+h4 {
+  font-weight: bolder;
+  font-size: 150%;
+}
+
 p {
   text-align: center;
 }
@@ -92,7 +127,7 @@ p.make_and_model {
 }
 
 a {
-  color: #666;
+  color: #444;
 }
 
 a:hover {
@@ -117,6 +152,8 @@ button {
 }
 
 .about {
+  margin-top: 20px;
+
   img { margin: 20px 0 }
   a { text-decoration: underline }
   a:hover { text-decoration: none }

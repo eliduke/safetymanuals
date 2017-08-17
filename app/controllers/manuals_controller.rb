@@ -3,10 +3,12 @@ class ManualsController < ApplicationController
 
   def index
     @title = "Home"
+    @index_selected = true
   end
 
   def list
     @title = "Master List"
+    @list_selected = true
   end
 
   def show

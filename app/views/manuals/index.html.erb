@@ -1,15 +1,17 @@
 <%= render partial: "shared/filters" %>
 
-<div class="container">
-  <div class="flex-container">
-    <% @manuals.each do |manual| %>
-      <div class="flex-item">
-        <%= link_to manual do %>
-          <h2 class="carrier"><%= manual.carrier %></h2>
-          <p class="make_and_model"><%= manual.make %> <%= manual.model %></p>
-          <%= image_tag(manual.photo.url(:small), class: "img-responsive") %>
-        <% end %>
-      </div>
-    <% end %>
+<div id="thumbnails">
+  <div class="container">
+    <div class="flex-container">
+      <% @manuals.each do |manual| %>
+        <div class="flex-item">
+          <%= link_to manual do %>
+            <h2 class="carrier"><%= manual.carrier %></h2>
+            <p class="make_and_model"><%= manual.make %> <%= manual.model %></p>
+            <%= image_tag(manual.photo.url(:small), class: "img-responsive") %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
