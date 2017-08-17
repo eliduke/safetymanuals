@@ -20,7 +20,11 @@
       <tbody>
         <% @manuals.each do |manual| %>
           <tr>
-            <td><%= image_tag(manual.photo.url(:small), style: "width:100px") %></td>
+            <td>
+              <%= link_to manual do %>
+                <%= image_tag(manual.photo.url(:small), style: "width:100px") %>
+              <% end %>
+            </td>
             <td>
               <%= manual.carrier %><br/>
               <%= manual.make %><br/>
@@ -29,7 +33,7 @@
             </td>
             <td>
               <%= link_to 'Edit', edit_admin_manual_path(manual) %><br />
-              <%= link_to 'Delete', admin_manual_path(manual), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to 'Delete', admin_manual_path(manual), method: :delete, data: { confirm: 'Are you sure?' } %><br/>
             </td>
           </tr>
         <% end %>

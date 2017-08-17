@@ -9,7 +9,7 @@
         <tr>
           <th>Carrier</th>
           <th>Make &amp; Model</th>
-          <th style="width: 50px"></th>
+          <th style="width: 30px"></th>
         </tr>
       </thead>
 
@@ -18,7 +18,11 @@
           <tr>
             <td><%= manual.carrier %></td>
             <td><%= manual.make %> <%= manual.model %></td>
-            <td><%= link_to "show", manual %></td>
+            <td>
+              <%= link_to manual do %>
+                <%= fa_icon "file-image-o" %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
