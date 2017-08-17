@@ -42,7 +42,7 @@
         <% end %>
       </div>
 
-      <% if params[:carrier].present? | params[:make].present? | params[:mode].present? %>
+      <% if filter_on %>
         <p>
           Filtering
           <% if params[:carrier].present? %>
