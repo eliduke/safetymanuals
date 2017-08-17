@@ -3,6 +3,8 @@ class Admin::ManualsController < ApplicationController
   before_action :set_manual, only: [:show, :edit, :update, :destroy]
 
   def index
+    @title = "Admin"
+
     @manuals = Manual.all.order(:carrier)
     @manuals = @manuals.by_mode(params[:mode]) if params[:mode].present?
     @manuals = @manuals.by_make(params[:make]) if params[:make].present?
@@ -14,10 +16,12 @@ class Admin::ManualsController < ApplicationController
   end
 
   def new
+    @title = "New Manual"
     @manual = Manual.new
   end
 
   def edit
+    @title = "Edit Manual - #{@manual.title}"
   end
 
   def create

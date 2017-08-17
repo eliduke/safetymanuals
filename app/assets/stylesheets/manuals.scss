@@ -92,11 +92,11 @@ p.make_and_model {
 }
 
 a {
-  color: $color-dark;
+  color: #666;
 }
 
 a:hover {
-  color: $color-medium;
+  color: $color-dark;
   text-decoration: none;
 }
 
@@ -145,7 +145,7 @@ button {
   padding: 0 15px 15px 15px;
   width: 300px;
   margin-bottom: 20px;
-  border: 3px solid $color-medium;
+  border: 3px solid #999;
 }
 
 #notice {

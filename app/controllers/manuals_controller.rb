@@ -2,13 +2,16 @@ class ManualsController < ApplicationController
   before_action :set_filters, only: [:index, :list]
 
   def index
+    @title = "Home"
   end
 
   def list
+    @title = "Master List"
   end
 
   def show
     @manual = Manual.find_by(permalink: params[:id])
+    @title = @manual.title
   end
 
   private
