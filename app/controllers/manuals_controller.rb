@@ -14,6 +14,10 @@ class ManualsController < ApplicationController
     @title = @manual.title
   end
 
+  def about
+    @title = "About"
+  end
+
   private
 
   def set_filters

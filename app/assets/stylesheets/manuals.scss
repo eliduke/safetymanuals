@@ -116,6 +116,13 @@ button {
   width: 100%;
 }
 
+.about {
+  p { text-align: left }
+  img { margin: 20px 0 }
+  a { text-decoration: underline }
+  a:hover { text-decoration: none }
+}
+
 #footer {
   margin: 40px 0;
   text-align: center;

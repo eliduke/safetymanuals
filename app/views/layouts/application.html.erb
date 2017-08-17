@@ -27,7 +27,7 @@
       <p>
         <%= link_to "FILTERS", "#", class: "js-toggle-filter" if @carriers.present? %>
         <%= "•" if @carriers.present? %>
-        <%= link_to "MASTER LIST", list_manuals_path %>
+        <%= link_to "MASTER LIST", list_manuals_path %> • <%= link_to "ABOUT", about_path %>
       </p>
     </div>
 
