@@ -17,7 +17,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # ADDONS
 gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk-s3'
 gem "has_permalink"
 gem "font-awesome-rails"
 gem "strip_attributes"
