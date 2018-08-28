@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815025819) do
+ActiveRecord::Schema.define(version: 20180828221707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170815025819) do
     t.string "permalink"
     t.string "mode"
     t.string "revision"
+    t.text "notes"
     t.index ["permalink"], name: "index_manuals_on_permalink"
   end
 

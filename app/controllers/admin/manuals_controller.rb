@@ -56,6 +56,14 @@ class Admin::ManualsController < ApplicationController
   end
 
   def manual_params
-    params.require(:manual).permit(:mode, :carrier, :make, :model, :revision, :photo)
+    params.require(:manual).permit(
+      :mode,
+      :carrier,
+      :make,
+      :model,
+      :revision,
+      :photo,
+      :notes
+    )
   end
 end

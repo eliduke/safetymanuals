@@ -2,6 +2,11 @@
   <div class="col-sm-6 col-sm-offset-3">
     <h2 class="carrier"><%= @manual.carrier %></h2>
     <p class="make_and_model"><%= @manual.make %> <%= @manual.model %></p>
+
+    <% if @manual.notes %>
+      <p class="notes"><%= simple_format(@manual.notes) %></p>
+    <% end %>
+
     <%= image_tag(@manual.photo.url(:medium), class: "img-responsive") %>
   </div>
 </div>
