@@ -1,12 +1,11 @@
-<%= render partial: "shared/filters" %>
-
 <h3>Master List</h3>
 
 <div class="container">
-  <div class="col-sm-6 col-sm-offset-3">
+  <div class="col-md-8 col-md-offset-2">
     <table class="table">
       <thead class="thead-inverse">
         <tr>
+          <th style="width: 30px"></th>
           <th>Carrier</th>
           <th>Make &amp; Model</th>
           <th style="width: 30px"></th>
@@ -16,11 +15,18 @@
       <tbody>
         <% @manuals.each do |manual| %>
           <tr>
-            <td><%= manual.carrier %></td>
-            <td><%= manual.make %> <%= manual.model %></td>
             <td>
               <%= link_to manual do %>
                 <%= fa_icon "file-image-o" %>
+              <% end %>
+            </td>
+
+            <td><%= manual.carrier %></td>
+            <td><%= manual.make %> <%= manual.model %></td>
+
+            <td>
+              <%= link_to edit_manual_path(manual) do %>
+                <%= fa_icon "edit" %>
               <% end %>
             </td>
           </tr>

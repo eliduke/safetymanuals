@@ -25,16 +25,24 @@
     <div id="header">
       <h1><%= link_to "SAFETY MANUALS", root_path %></h1>
       <p>
-        <%= link_to "HOME", manuals_path if @title == "About"%>
-        <%= "•" if @title == "About"%>
-        <%= link_to "ABOUT", about_path %>
+        <%= link_to "HOME", manuals_path %> •
+        <%= link_to "ABOUT", about_path %> •
+        <%= link_to "NEW", new_manual_path %>
       </p>
     </div>
 
-    <%= yield %>
+    <%= render partial: "shared/filters" if action_name.in?(["index", "list"]) %>
 
-    <div id="footer">
-      <p>created by: <%= link_to "eli.pink", "https://eli.pink", target: "_blank" %> | <%= link_to "admin", admin_manuals_path %></p>
-    </div>
+    <% if notice %>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <p id="notice"><%= notice %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <%= yield %>
   </body>
 </html>

@@ -1,4 +1,6 @@
 class ManualsController < ApplicationController
+  http_basic_authenticate_with name: ENV['BASIC_AUTH_USERNAME'], password: ENV['BASIC_AUTH_PASSWORD'], only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_manual, only: [:show, :edit, :update, :destroy]
   before_action :set_filters, only: [:index, :list]
 
   def index
@@ -14,6 +16,40 @@ class ManualsController < ApplicationController
   def show
     @manual = Manual.find_by(permalink: params[:id])
     @title = @manual.title
+  end
+
+  def new
+    @title = "New Manual"
+    @manual = Manual.new
+  end
+
+  def edit
+    @title = "Edit Manual - #{@manual.title}"
+  end
+
+  def create
+    @manual = Manual.new(manual_params)
+
+    if @manual.save
+      redirect_to @manual, notice: 'Manual was successfully created.'
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @manual.update(manual_params)
+      redirect_to @manual, notice: 'Manual was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @manual.photo = nil
+    @manual.save
+    @manual.destroy
+    redirect_to manuals_path, notice: 'Manual was successfully destroyed.'
   end
 
   def about
@@ -54,4 +90,19 @@ class ManualsController < ApplicationController
     @carriers = Manual.all.pluck(:carrier).uniq.sort
   end
 
+  def set_manual
+    @manual = Manual.find_by(permalink: params[:id])
+  end
+
+  def manual_params
+    params.require(:manual).permit(
+      :mode,
+      :carrier,
+      :make,
+      :model,
+      :revision,
+      :photo,
+      :notes
+    )
+  end
 end

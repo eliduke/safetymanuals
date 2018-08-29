@@ -3,13 +3,9 @@ Rails.application.routes.draw do
 
   get '/about', to: "manuals#about", as: :about
 
-  resources :manuals, only: [:index, :show] do
+  resources :manuals do
     collection do
       get :list, as: :list
     end
-  end
-
-  namespace :admin do
-    resources :manuals, except: [:show]
   end
 end
