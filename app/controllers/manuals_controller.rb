@@ -23,10 +23,6 @@ class ManualsController < ApplicationController
     @manual = Manual.new
   end
 
-  def edit
-    @title = "Edit Manual - #{@manual.title}"
-  end
-
   def create
     @manual = Manual.new(manual_params)
 
@@ -35,6 +31,10 @@ class ManualsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @title = "Edit Manual - #{@manual.title}"
   end
 
   def update
