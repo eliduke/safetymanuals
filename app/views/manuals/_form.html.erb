@@ -5,21 +5,25 @@
       <div class="form-group">
         <%= form.label :mode %>
         <%= form.select :mode, options_for_select(Manual::MODES, @manual.mode), {}, { id: :manual_mode, class: "form-control input-lg" } %>
+        <%= error_messages_for(@manual, :mode) %>
       </div>
 
       <div class="form-group">
         <%= form.label :carrier %>
         <%= form.text_field :carrier, id: :manual_carrier, class: "form-control input-lg" %>
+        <%= error_messages_for(@manual, :carrier) %>
       </div>
 
       <div class="form-group">
         <%= form.label :make %>
         <%= form.text_field :make, id: :manual_make, class: "form-control input-lg" %>
+        <%= error_messages_for(@manual, :make) %>
       </div>
 
       <div class="form-group">
         <%= form.label :model %>
         <%= form.text_field :model, id: :manual_model, class: "form-control input-lg" %>
+        <%= error_messages_for(@manual, :model) %>
       </div>
 
       <div class="form-group">

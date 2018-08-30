@@ -1,17 +1,19 @@
-<div class="container show">
-  <div class="col-sm-6 col-sm-offset-3">
-    <h2 class="carrier"><%= @manual.carrier %></h2>
-    <p class="make_and_model"><%= @manual.make %> <%= @manual.model %></p>
+<div id="show">
+  <div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h2><%= @manual.carrier %></h2>
+      <p class="make_and_model"><%= @manual.make %> <%= @manual.model %></p>
 
-    <p class="notes">
-      <%= simple_format(@manual.notes) %>
-    </p>
+      <p class="notes">
+        <%= simple_format(@manual.notes) %>
+      </p>
 
-    <%= image_tag(@manual.photo.url(:medium), class: "img-responsive") %>
+      <%= image_tag(@manual.photo.url(:medium), class: "img-responsive") %>
 
-    <p class="meta">
-      <%= @manual.created_at.strftime("%B %-d, %Y") %> /
-      <%= link_to "Edit", edit_manual_path(@manual) %>
-    </p>
+      <p class="meta">
+        <%= @manual.created_at.strftime("%B %-d, %Y") %> /
+        <%= link_to "Edit", edit_manual_path(@manual) %>
+      </p>
+    </div>
   </div>
 </div>

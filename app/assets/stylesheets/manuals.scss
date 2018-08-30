@@ -1,21 +1,17 @@
-// Place all the styles related to the Manuals controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 $color-dark: #ff748c;
 $color-medium: #ff8fa3;
 $color-light: #ffabba;
 $color-lightest: #ffc7d1;
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
   margin: 0 0 40px 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 #header {
   background-color: $color-dark;
-  text-align: center;
   padding: 20px;
   margin: 0;
 
@@ -46,7 +42,6 @@ body {
   ul {
     margin: 0;
     padding: 20px;
-    text-align: center;
 
     li {
       display: inline-block;
@@ -69,7 +64,6 @@ body {
 }
 
 #sub-header {
-  text-align: right;
   background-color: #eee;
   padding: 15px 0;
 
@@ -84,42 +78,109 @@ body {
   .thumbnail-and-list {
     float: right;
   }
+
+  .fa-file-image-o {
+    margin-right: 10px;
+  }
 }
 
-i.fa {
-  font-size: 1.25em;
+#index {
+  .flex-container {
+    padding: 0;
+    margin: 20px 0 0 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  .flex-item {
+    padding: 0;
+    margin-bottom: 20px;
+    width: 300px;
+  }
 }
 
-.fa-file-image-o {
-  margin-right: 10px;
+#show {
+  h2 {
+    margin-top: 20px;
+  }
 }
 
-.selected {
+#about {
+  margin-top: 20px;
+  text-align: left;
+
+  h4 {
+    font-weight: bolder;
+    font-size: 150%;
+  }
+
+  p {
+    text-align: left;
+    font-size: 120%;
+
+    &.emoji {
+      text-align: center;
+      font-size: 300%;
+      margin-top: 50px;
+    }
+  }
+
+  img { margin: 20px 0 }
+
+  a { text-decoration: underline }
+  a:hover { text-decoration: none }
+}
+
+#notice {
+  margin: 20px 0 0 0;
+  font-size: 130%;
+  padding: 10px;
+  background-color: #eee;
+  text-align: center;
   color: $color-dark;
 }
 
 h2 {
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-h2.carrier {
   margin: 10px 0 0 0;
 }
 
 h3 {
-  text-align: center;
   font-weight: bold;
 }
 
-h4 {
-  font-weight: bolder;
-  font-size: 150%;
+table {
+  margin-top: 20px;
 }
 
-p {
-  text-align: center;
+form {
+  text-align: left;
+  font-size: 120%;
+
+  img {
+    margin-bottom: 15px
+  }
+}
+
+a {
+  color: #444;
+}
+
+a:hover {
+  color: $color-dark;
+  text-decoration: none;
+}
+
+button, .btn {
+  width: 100%;
 }
 
 p.make_and_model {
@@ -132,91 +193,16 @@ p.meta {
   color: #999;
 }
 
-a {
-  color: #444;
+p.error-messages-for {
+  font-size: 80%;
+  margin: 5px 0 0 0;
+  color: #999;
 }
 
-a:hover {
+i.fa {
+  font-size: 1.25em;
+}
+
+.selected {
   color: $color-dark;
-  text-decoration: none;
-}
-
-table {
-  margin-top: 20px;
-}
-
-form {
-  font-size: 120%;
-  img { margin-bottom: 15px }
-}
-
-button, .btn {
-  width: 100%;
-}
-
-.about {
-  margin-top: 20px;
-
-  img { margin: 20px 0 }
-  a { text-decoration: underline }
-  a:hover { text-decoration: none }
-
-  p {
-    text-align: left;
-    font-size: 120%;
-  }
-
-  p.emoji {
-    font-size: 300%;
-    text-align: center;
-    margin-top: 50px;
-  }
-}
-
-#footer {
-  margin: 40px 0;
-  text-align: center;
-}
-
-.show {
-  text-align: center;
-
-  h2.carrier {
-    margin-top: 20px;
-  }
-}
-
-.flex-container {
-  padding: 0;
-  margin: 20px 0 0 0;
-  list-style: none;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.flex-item {
-  padding: 0;
-  margin-bottom: 20px;
-  width: 300px;
-}
-
-#notice {
-  margin: 20px 0 0 0;
-  font-size: 130%;
-  padding: 10px;
-  background-color: #eee;
-  text-align: center;
-  color: $color-dark;
-}
-
-.field_with_errors {
-  padding: 2px;
-  background-color: #e5abb6;
 }

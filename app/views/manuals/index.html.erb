@@ -1,10 +1,10 @@
-<div id="thumbnails">
+<div id="index">
   <div class="container">
     <div class="flex-container">
       <% @manuals.each do |manual| %>
         <div class="flex-item">
           <%= link_to manual do %>
-            <h2 class="carrier"><%= manual.carrier %></h2>
+            <h2><%= manual.carrier %></h2>
             <p class="make_and_model"><%= manual.make %> <%= manual.model %></p>
           <% end %>
 
